@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Chat | ChatSite{% endblock %}
+
+{% block css %}
+body{
+  background-color: lightblue;
+  color: black;
+}
+{% endblock %}
+
+{% block body %}
+<div class="col-sm-12">
+    <h1>hello world</h1>
+    <a href="{% url 'main:logout_user' %}"><h2>logout</h2></a>
+</div>
+{% endblock %}

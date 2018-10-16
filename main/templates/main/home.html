@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Home | ChatSite{% endblock %}
+
+{% block css %}
+body{
+  background-color: gray;
+  color: black;
+}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="col-sm-12">
+    {% if error_message %}
+        <h3 style="color:#8e2020;font-weight:bold;">{{ error_message }}</h3>
+    {% endif %}
+    <form role="form" action="{% url 'main:home' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" name="username" placeholder="Username">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+    </form>
+</div>
+{% endblock %}
